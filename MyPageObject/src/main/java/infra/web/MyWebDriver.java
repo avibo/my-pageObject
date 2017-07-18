@@ -1,4 +1,4 @@
-package infraWeb;
+package infra.web;
 
 public class MyWebDriver {
 

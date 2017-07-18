@@ -1,4 +1,4 @@
-package infraWeb.objectRepositories;
+package infra.web.objectRepositories;
 
 import org.openqa.selenium.By;
 

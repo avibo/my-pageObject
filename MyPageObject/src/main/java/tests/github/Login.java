@@ -2,8 +2,8 @@ package tests.github;
 
 import org.testng.annotations.Test;
 
-import infraWeb.objectRepositories.LoginPageElements;
-import infraWeb.pageObjects.LoginPage;
+import infra.web.objectRepositories.LoginPageElements;
+import infra.web.pageObjects.LoginPage;
 import tests.AbstractTestCase;
 
 public class Login extends AbstractTestCase {

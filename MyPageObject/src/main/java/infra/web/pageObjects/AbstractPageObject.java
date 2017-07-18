@@ -1,4 +1,4 @@
-package infraWeb.pageObjects;
+package infra.web.pageObjects;
 
 import java.io.File;
 import java.util.HashMap;
@@ -10,9 +10,10 @@ import org.openqa.selenium.WebDriver;
 import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
 import il.co.topq.difido.model.Enums.Status;
-import infraWeb.elements.Button;
-import infraWeb.elements.TextBox;
-import infraWeb.objectRepositories.PageElements;
+import infra.web.elements.Button;
+import infra.web.elements.TextBox;
+import infra.web.objectRepositories.PageElements;
+
 
 public abstract class AbstractPageObject {
 

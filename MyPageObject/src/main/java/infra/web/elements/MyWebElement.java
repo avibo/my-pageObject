@@ -1,4 +1,4 @@
-package infraWeb.elements;
+package infra.web.elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
-import infraWeb.objectRepositories.PageElements;
+import infra.web.objectRepositories.PageElements;
+
 
 public class MyWebElement {
 	

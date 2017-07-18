@@ -7,8 +7,8 @@ import org.testng.annotations.Listeners;
 
 import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
-import infraConfigs.TestSUT;
-import infraWeb.WebdriverFactory;
+import infra.configuration.TestSUT;
+import infra.web.WebdriverFactory;
 
 @Listeners(il.co.topq.difido.ReportManagerHook.class)
 public abstract class AbstractTestCase {

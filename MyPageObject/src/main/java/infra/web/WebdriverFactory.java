@@ -1,4 +1,4 @@
-package infraWeb;
+package infra.web;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,8 +10,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
-import infraConfigs.ResourceUtils;
-import infraConfigs.TestConfig;
+import infra.configuration.ResourceUtils;
+import infra.configuration.TestConfig;
 
 public class WebdriverFactory {
 

@@ -1,9 +1,8 @@
-package infraWeb.elements;
+package infra.web.elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import infraWeb.objectRepositories.PageElements;
+import infra.web.objectRepositories.PageElements;
 
 public class TextBox extends MyWebElement {
 

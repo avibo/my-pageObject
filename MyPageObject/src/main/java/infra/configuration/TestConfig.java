@@ -1,4 +1,4 @@
-package infraConfigs;
+package infra.configuration;
 
 import java.io.File;
 import java.io.IOException;

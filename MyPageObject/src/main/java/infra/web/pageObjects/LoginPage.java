@@ -1,11 +1,11 @@
-package infraWeb.pageObjects;
+package infra.web.pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import infraWeb.elements.Button;
-import infraWeb.elements.TextBox;
-import infraWeb.objectRepositories.LoginPageElements;
+import infra.web.elements.Button;
+import infra.web.elements.TextBox;
+import infra.web.objectRepositories.LoginPageElements;
 
 public class LoginPage extends AbstractPageObject {
 	
