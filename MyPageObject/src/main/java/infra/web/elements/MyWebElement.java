@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
 import infra.web.objectRepositories.PageElements;
@@ -65,6 +68,16 @@ public class MyWebElement {
 		report.log("got the text " + text + " from " + elementName);
 		return text;
 	}
+	
+	@Deprecated
+	public void waitForElementPresence() {
+        new WebDriverWait(driver, 20).until(ExpectedConditions.presenceOfAllElementsLocatedBy(elementBy));
+    }
+	
+	@Deprecated
+	public void waitForElementVisiblity() {
+        new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(elementBy));
+    }
 	
 	protected void initElement() {
 		element = driver.findElement(elementBy);

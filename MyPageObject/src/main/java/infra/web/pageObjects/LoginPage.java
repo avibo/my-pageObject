@@ -16,20 +16,17 @@ public class LoginPage extends AbstractPageObject {
 
 	@Override
 	protected void assertInPage() {
-		// TODO Auto-generated method stub
 		
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	private void initElements() {
-		addButton(new Button(driver, LoginPageElements.LOGIN_BTN, LoginPageElements.LOGIN_BTN.getByXpath()));
+		addButton(new Button(driver, LoginPageElements.LOGIN_BTN, LoginPageElements.LOGIN_BTN.getByXpath(), this::loginAction));
 		addTextBox(new TextBox(driver, LoginPageElements.USER_LOGIN_TB, LoginPageElements.USER_LOGIN_TB.getByXpath()));
 		addTextBox(new TextBox(driver, LoginPageElements.PASSWORD_TB, LoginPageElements.PASSWORD_TB.getByXpath()));
+	}
+	
+	public MainPage loginAction() {
+		return new MainPage(driver);
 	}
 
 }
