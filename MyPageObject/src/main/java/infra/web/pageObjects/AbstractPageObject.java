@@ -49,6 +49,8 @@ public abstract class AbstractPageObject {
 		}
 	}
 	
+	//*************************** Part of the solution of using AbstractPageObject variable which contains all relevant elements*************************** 
+	
 	public Button getButton(PageElements button) {
 		return buttonMap.get(button);
 	}
@@ -64,6 +66,8 @@ public abstract class AbstractPageObject {
 	public void addTextBox(TextBox tb) {
 		textBoxMap.put(tb.getElementData(), tb);
 	}
+	
+	//*****************************************************************************************************************************************************
 	
 	protected abstract void assertInPage();
 	

@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
 import infra.web.objectRepositories.PageElements;
+import infra.web.pageObjects.AbstractPageObject;
+import infra.web.pageObjects.NavigationAction;
 
 
 public class MyWebElement {
@@ -19,10 +21,10 @@ public class MyWebElement {
 	private PageElements elementData;
 	private String elementName;
 	private By elementBy;
-	private Runnable afterAction; 
+	private NavigationAction afterAction; 
 	private WebElement element = null;
 	
-	public MyWebElement(WebDriver driver, PageElements elementData, By elementBy, Runnable afterAction) {
+	public MyWebElement(WebDriver driver, PageElements elementData, By elementBy, NavigationAction afterAction) {
 		this.driver = driver;
 		this.elementData = elementData;
 		this.elementName = elementData.getName();
@@ -42,16 +44,16 @@ public class MyWebElement {
 		return elementName;
 	}
 
-	public void click(boolean runAfterAction) {
+	public <T extends AbstractPageObject> T click(boolean runAfterAction) {
 		report.log("About to click " + elementName);
 		initElement();
 		element.click();
 		report.log("Clicked on " + elementName);
-		afterAction(runAfterAction);
+		return afterAction(runAfterAction);
 	}
 	
-	public void click() {
-		click(true);
+	public <T extends AbstractPageObject> T click() {
+		return click(true);
 	}
 	
 	public void setValue(String value) {
@@ -83,10 +85,11 @@ public class MyWebElement {
 		element = driver.findElement(elementBy);
 	}
 	
-	protected void afterAction(boolean runAfterAction) {
+	protected <T extends AbstractPageObject> T afterAction(boolean runAfterAction) {
 		if(afterAction != null && runAfterAction)
 		{
-			afterAction.run();
+			return (T) afterAction.run();
 		}
+		return null;
 	}
 }
