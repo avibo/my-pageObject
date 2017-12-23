@@ -19,14 +19,11 @@ public abstract class AbstractPageObject {
 
 	protected final WebDriver driver;
 	protected ReportDispatcher report = ReportManager.getInstance();
-	private Map<PageElements, Button> buttonMap;
-	private Map<PageElements, TextBox> textBoxMap;
+
 
 	public AbstractPageObject(WebDriver driver) {
 		this.driver = driver;
 		waitForScreenToLoad();
-		buttonMap = new HashMap<PageElements, Button>();
-		textBoxMap = new HashMap<PageElements, TextBox>();
 	}
 	
 	public void takeScreenshot(String description) {
@@ -48,26 +45,6 @@ public abstract class AbstractPageObject {
 			takeScreenshot(this.getClass().getSimpleName());
 		}
 	}
-	
-	//*************************** Part of the solution of using AbstractPageObject variable which contains all relevant elements*************************** 
-	
-	public Button getButton(PageElements button) {
-		return buttonMap.get(button);
-	}
-	
-	public void addButton(Button button) {
-		buttonMap.put(button.getElementData(), button);
-	}
-	
-	public TextBox getTextbox(PageElements textBox) {
-		return textBoxMap.get(textBox);
-	}
-	
-	public void addTextBox(TextBox tb) {
-		textBoxMap.put(tb.getElementData(), tb);
-	}
-	
-	//*****************************************************************************************************************************************************
 	
 	protected abstract void assertInPage();
 	

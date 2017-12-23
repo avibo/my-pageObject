@@ -26,10 +26,10 @@ public class Login extends AbstractTestCase {
 
 	@Test(dataProvider = "test dp")
 	public void LoginGenericsSolution(String username, String password) {
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.getTextbox(LoginPageElements.USER_LOGIN_TB).setValue(username);
-		loginPage.getTextbox(LoginPageElements.PASSWORD_TB).setValue(password);
-		MainPage mainPage = loginPage.getButton(LoginPageElements.LOGIN_BTN).click();
+		infra.GenericsSolution.pageObjects.LoginPage loginPage = new infra.GenericsSolution.pageObjects.LoginPage(driver);
+		loginPage.passwordTb.setValue(username);
+		loginPage.passwordTb.setValue(password);
+		infra.GenericsSolution.pageObjects.MainPage mainPage = loginPage.loginBtn.click();
 	}
 
 }
