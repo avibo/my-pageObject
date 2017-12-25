@@ -1,9 +1,9 @@
 package infra.GenericsSolution.pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import infra.GenericsSolution.elements.Button;
-import infra.GenericsSolution.objectRepositories.MainPageElements;
 
 public class MainPage extends AbstractPageObject {
 	
@@ -20,6 +20,6 @@ public class MainPage extends AbstractPageObject {
 	}
 
 	private void initElements() {
-		exploreGitHubBtn = new Button(driver, MainPageElements.EXPLORE_GITHUB_BTN, MainPageElements.EXPLORE_GITHUB_BTN.getByXpath());
+		exploreGitHubBtn = new Button(driver, "Explore GitHub button", By.xpath("//a[text() = 'Explore GitHub']"));
 	}
 }

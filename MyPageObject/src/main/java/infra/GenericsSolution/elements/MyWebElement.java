@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
-import infra.GenericsSolution.objectRepositories.PageElements;
 import infra.GenericsSolution.pageObjects.AbstractPageObject;
 import infra.GenericsSolution.pageObjects.NavigationAction;
 
@@ -19,26 +18,20 @@ public class MyWebElement {
 	
 	protected ReportDispatcher report = ReportManager.getInstance();
 	private WebDriver driver;
-	private PageElements elementData;
 	private String elementName;
 	private By elementBy;
 	private NavigationAction afterAction; 
 	private WebElement element = null;
 	
-	public MyWebElement(WebDriver driver, PageElements elementData, By elementBy, NavigationAction afterAction) {
+	public MyWebElement(WebDriver driver, String elementName, By elementBy, NavigationAction afterAction) {
 		this.driver = driver;
-		this.elementData = elementData;
-		this.elementName = elementData.getName();
+		this.elementName = elementName;
 		this.elementBy = elementBy;
 		this.afterAction = afterAction;
 	}
 	
-	public MyWebElement(WebDriver driver, PageElements elementData, By elementBy) {
-		this(driver, elementData, elementBy, null);
-	}
-	
-	public PageElements getElementData() {
-		return elementData;
+	public MyWebElement(WebDriver driver, String elementName, By elementBy) {
+		this(driver, elementName, elementBy, null);
 	}
 	
 	public String getElementName() {

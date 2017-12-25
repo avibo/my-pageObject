@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 import infra.GenericsSolution.elements.Button;
 import infra.GenericsSolution.elements.TextBox;
-import infra.GenericsSolution.objectRepositories.LoginPageElements;
 
 public class LoginPage extends AbstractPageObject {
 	
@@ -24,14 +23,14 @@ public class LoginPage extends AbstractPageObject {
 	}
 	
 	private void initElements() {
-		loginBtn = new Button(driver, LoginPageElements.LOGIN_BTN, LoginPageElements.LOGIN_BTN.getByXpath(), () -> loginAction()){
+		loginBtn = new Button(driver, "Login button", By.xpath("//input[@value = 'Sign in']"), () -> loginAction()){
 			@Override
 			public MainPage click(boolean runAfterAction) {
 				return super.click(runAfterAction);
 			}
 		};
-		userLoginTb = new TextBox(driver, LoginPageElements.USER_LOGIN_TB, LoginPageElements.USER_LOGIN_TB.getByXpath());
-		passwordTb = new TextBox(driver, LoginPageElements.PASSWORD_TB, LoginPageElements.PASSWORD_TB.getByXpath());
+		userLoginTb = new TextBox(driver, "Username textbox", By.xpath("//input[@id = 'login_field']"));
+		passwordTb = new TextBox(driver, "Password textbox", By.xpath("//input[@id = 'password']"));
 	}
 	
 	public MainPage loginAction() {

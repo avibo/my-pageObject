@@ -3,9 +3,10 @@ package tests.github;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import infra.GenericsSolution.pageObjects.MainPage;
 import infra.web.objectRepositories.LoginPageElements;
+import infra.web.pageObjects.AbstractPageObject;
 import infra.web.pageObjects.LoginPage;
-import infra.web.pageObjects.MainPage;
 import tests.AbstractTestCase;
 
 public class Login extends AbstractTestCase {
@@ -20,7 +21,7 @@ public class Login extends AbstractTestCase {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.getTextbox(LoginPageElements.USER_LOGIN_TB).setValue(username);
 		loginPage.getTextbox(LoginPageElements.PASSWORD_TB).setValue(password);
-		MainPage mainPage = loginPage.getButton(LoginPageElements.LOGIN_BTN).click();
+		AbstractPageObject mainPage = loginPage.getButton(LoginPageElements.LOGIN_BTN).click();
 	}
 	
 
@@ -29,7 +30,7 @@ public class Login extends AbstractTestCase {
 		infra.GenericsSolution.pageObjects.LoginPage loginPage = new infra.GenericsSolution.pageObjects.LoginPage(driver);
 		loginPage.passwordTb.setValue(username);
 		loginPage.passwordTb.setValue(password);
-		infra.GenericsSolution.pageObjects.MainPage mainPage = loginPage.loginBtn.click();
+		MainPage mainPage = loginPage.loginBtn.click();
 	}
 
 }

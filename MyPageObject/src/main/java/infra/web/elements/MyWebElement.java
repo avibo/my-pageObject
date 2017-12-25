@@ -44,7 +44,7 @@ public class MyWebElement {
 		return elementName;
 	}
 
-	public <T extends AbstractPageObject> T click(boolean runAfterAction) {
+	public AbstractPageObject click(boolean runAfterAction) {
 		report.log("About to click " + elementName);
 		initElement();
 		element.click();
@@ -52,7 +52,7 @@ public class MyWebElement {
 		return afterAction(runAfterAction);
 	}
 	
-	public <T extends AbstractPageObject> T click() {
+	public AbstractPageObject click() {
 		return click(true);
 	}
 	
@@ -85,10 +85,10 @@ public class MyWebElement {
 		element = driver.findElement(elementBy);
 	}
 	
-	protected <T extends AbstractPageObject> T afterAction(boolean runAfterAction) {
+	protected AbstractPageObject afterAction(boolean runAfterAction) {
 		if(afterAction != null && runAfterAction)
 		{
-			return (T) afterAction.run();
+			return afterAction.run();
 		}
 		return null;
 	}
